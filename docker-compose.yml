@@ -1,0 +1,11 @@
+web:
+   build: .
+   ports:
+    - "1234:5050"
+   links:
+    - db
+db:
+   image: mongo
+   container_name: mongodb
+   ports:
+     - 27017:27017

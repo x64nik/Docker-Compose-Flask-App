@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Services</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+</head>
+<style>
+#body{
+    background-image: linear-gradient(to bottom, rgba(110, 9, 241, 0.5), rgba(230, 236, 238, 0.5));
+    }
+.button:hover {
+    background-color: red;
+    color: white;
+    }
+.button {
+    box-sizing: 8;
+    background-color: rgb(19, 16, 228);
+    border: 2px solid white;
+    color : white;
+    padding: 10px 40px;
+    position:absolute;
+    padding-left:900px 40px;
+    top : 500px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 40px;
+    font-size: 16px;
+    left: 70x;
+    right: 140x; 
+    
+    }
+    .sidebar a:hover {
+  color: #f1f1f1;
+  color : red
+}
+    #main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+    </style>
+<body id = body>
+
+<div class="w3-sidebar w3-bar-block w3-dark-white  w3-animate-left" style="display:none; position: absolute; top: 0px;" id="mySidebar">
+    <i class="w3-bar-item w3-button w3-large w3-black w3-hover-deep-purple";
+    onclick="menu_close()"><i class="fa fa-home"></i> Home</i>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple" onclick="user_info()"><i class= "fa fa-user-circle"></i> User</a>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple"><i class= "fa fa-bank"></i> Account</a>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple" onclick="service_info()"><i class= "fa fa-fw fa-wrench"></i> Services</a>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple" ><i class= "fa fa-bell"></i> Notification</a>
+    <a href="/login" class="w3-bar-item w3-button w3-large w3-hover-deep-purple"><i class= "glyphicon glyphicon-log-out"></i> LogOut</a>
+  </div>
+  <div>
+    <button class="w3-button w3-xlarge w3-grayscale-min " onclick="menu_open()" style=" position: absolute; top: 5px; left:2px ; color:whitesmoke; font-size: 20px;">&#9776</button>
+
+    <div class="w3-sidebar w3-bar-block w3-dark-white w3-animate-top" style="display:none; position: absolute; top: 0px; width: 21%;"  id="userInfo">
+    <i class="w3-bar-item w3-button w3-large w3-black w3-hover-deep-purple";
+    onclick="user_info_close()"><i class="fa fa-user-circle"></i> User</i>
+    <a href="#" class="w3-bar-item  w3-hover-deep-purple "><i class= "fa fa-user-circle"></i> {{ name }}</a>
+    <a href="#" class="w3-bar-item w3-button  w3-hover-deep-purple"><i class= "fa fa-phone"></i> {{ phone }}</a>
+    <a href="#" class="w3-bar-item w3-button  w3-hover-deep-purple"><i class= "fa fa-envelope"></i> {{ email }}</a>
+    <a href="#" class="w3-bar-item w3-button  w3-hover-deep-purple"><i class= "fa fa-clock-o"></i> Login at {{ loginTime }}</a>
+    </div>
+
+<div class="w3-sidebar w3-bar-block w3-dark-white w3-animate-left" style="display:none; position: absolute; top: 0px; width: 21%;"  id="service">
+    <i class="w3-bar-item w3-button w3-large w3-black w3-hover-deep-purple";
+    onclick="service_info_close()"><i class="fa fa-fw fa-wrench"></i> Services</i>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple"><i class= "fa fa-amazon"></i> AWS Cloud <i class= "fa fa-cloud"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple"><i class= "fa fa-cloud"></i> Docker</a>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple"><i class= "fa fa-cloud"></i> TerraForm</a>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple"><i class= "fa fa-cloud"></i> Ansible</a>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple"><i class= "fa fa-cloud"></i> Kubernetes</a>
+    <a href="#" class="w3-bar-item w3-button w3-large w3-hover-deep-purple"><i class= "fa fa-linux"></i> Linux</a>
+</div>
+
+<div id="main">
+<b><h1><p style="color:white; padding-left: 480px"> TechnoCraze Services </p></b></h1>
+<h4><b> <p style="color:white; position: absoute; top: 80px; padding-left: 530px;"><i class="fa fa-user-circle"></i> Hey {{ name }} </p></b></h4>
+<p style="color: white; position: absoute; top: 100px; padding-left: 490px; "><i class="fa fa-clock-o "></i>  Last login at {{ lastLoginTime }} </p>
+<img src="https://d2uzkdhnoxg6xj.cloudfront.net/myimage.jpg" alt="Cinque Terre" style= " padding-top: 20px; padding-left: 160px; padding-right: 100px;" width="1200" height="350">
+<h6><p style="color: white; position: absolute; top:170px ; padding-left: 460px; font-size: 20px; "> Make the things Automated with us</p></h6>
+<a href="#"><i class="glyphicon glyphicon-phone-alt" style="position:absolute; right: 7px; top: 10px; font-size:20px; color:whitesmoke;"></i></a>
+<a href="#"><button  style="color:whitesmoke; background-color: transparent; border-color: transparent; position: absolute; top: 7px; right: 60px;"> About </button></a>
+<i class="glyphicon glyphicon-education" style="position: absolute; top: 170px; padding-left:1060px;  color:whitesmoke; font-size: 20px;"></i>
+<i class="fa fa-amazon" style = "font-size:30px; position: absolute; top:  220px; padding-left: 190px;color:whitesmoke;" ><button style="background-color: transparent; border-color: transparent;" onclick="alert('Welcome to the AWS Cloud')"> AWS Cloud</button></i>
+<i class="fa fa-cloud" style = "font-size:30px;  position: absolute; top : 280px; padding-left: 190px;color:whitesmoke;" ><button style="background-color: transparent; border-color: transparent;" onclick="alert('Welcome to Docker World')"> Docker</button></i>
+<i class="fa fa-cloud" style = "font-size:30px;  position: absolute; top : 340px; padding-left: 190px;color:whitesmoke;" ><button style="background-color: transparent; border-color: transparent;" onclick="alert('Welcome to TerraForm World')"> TerraForm</button></i>
+<i class="fa fa-cloud" style = "font-size:30px;  position: absolute; top : 220px; padding-left: 850px;color:whitesmoke;" ><button style="background-color: transparent; border-color: transparent;" onclick="alert('Welcome to Ansible World')"> Ansible</button></i>
+<i class="fa fa-cloud" style = "font-size:30px;  position: absolute; top : 280px; padding-left: 850px;color:whitesmoke;" ><button style="background-color: transparent; border-color: transparent;" onclick="alert('Welcome to Kubernetes World')"> Kubernetes</button></i>
+<i class="fa fa-linux" style = "font-size:30px;  position: absolute; top : 340px; padding-left: 850px;color:whitesmoke;" ><button style="background-color: transparent; border-color: transparent;" onclick="alert('Welcome to Linux World')"> Linux</button></i>
+</div> 
+
+</body> 
+</html>
+<script>
+    function msg(){
+            alert("Your ec2_instance is being launching");  
+                 
+        }
+    function menu_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("main").style.marginLeft = "120px";
+    }
+    function menu_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("main").style.marginLeft = "0px";
+    }
+    function user_info(){
+        document.getElementById("userInfo").style.display = "block";
+    }
+    function user_info_close(){
+        document.getElementById("userInfo").style.display = "none";
+    }
+    function service_info(){
+        document.getElementById("service").style.display = "block";
+    }
+    function service_info_close(){
+        document.getElementById("service").style.display = "none";
+    }
+
+</script>
+
+
+

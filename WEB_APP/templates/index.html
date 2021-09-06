@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Nunito:600,700,900" rel="stylesheet">
+ <title>SignUp</title>
+ <br><h1 class="text-center"><p style = "color:white; ">TechnoCraze</p> </h1>
+</head>
+<style>
+  
+#body {
+  font-family: 'Nunito';
+  background-color:  #5d8fc9
+}
+#login-card{
+    width:350px;
+    border-radius: 25px;
+    margin:70px auto;
+    
+}
+
+#email{
+    border-radius:30px;
+    background-color: #ebf0fc;
+    border-color: #ebf0fc;
+    color: #9da3b0;
+}
+
+#button{
+    border-radius:30px;
+
+}
+
+#btn{
+   position: absolute; 
+   bottom: -35px; 
+   padding: 5px;
+   margin: 0px 55px;
+   align-items: center;
+   border-radius: 5px;
+}
+#container{
+    margin-top:25px;
+}
+
+.btn-circle.btn-sm { 
+            width: 40px; 
+            height: 40px; 
+            padding: 2px 0px; 
+            border-radius: 25px; 
+            font-size: 14px; 
+            text-align: center;
+            
+            margin: 8px;
+        }
+
+</style>
+</head>
+
+<body id="body">
+
+<div id="login-card" class="card">
+<div class="card-body">
+  <h2 class="text-center">Register</h2>
+  <br>
+  <form method="POST" name = "RegisterForm" action="/register" onsubmit="return validateForm()" >
+    <div class="form-group">
+      <input type="text" class="form-control" id="email" placeholder="Username" name="name">
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+    </div>
+    <div class="form-group">
+      <input type="phone" class="form-control" id="email" placeholder="Phone no." name="mobile">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="email" placeholder="Password" name="password">
+    </div>
+    <button type="submit" id="button" class="btn btn-primary deep-purple btn-block ">SignUp</button>
+<br>
+   
+    <div id="btn" class="text-center">
+   <button type="button" class="btn btn-primary btn-circle btn-sm"><i class="fa fa-facebook"></i></button>
+   <button type="button" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-google"></i></button>
+   <button type="button" class="btn btn-info btn-circle btn-sm"><i class="fa fa-twitter"></i></button>
+   </div>
+
+  </form>
+</form>
+<center>   
+<b><a href="/login" style = "color:dodgerblue">Already have an account ? <button  style= "color:dodgerblue; padding: 0px; background-color: transparent; border: dodgerblue; text-decoration: underline; ">login</button></a></p>
+
+</div>
+<div>
+</head>
+
+<script>
+  function validateForm() {
+  var email = document.forms["RegisterForm"]["email"].value;
+  var passwd = document.forms["RegisterForm"]["password"].value;
+  var user = document.forms["RegisterForm"]["name"].value;
+  var mobile = document.forms["RegisterForm"]["mobile"].value;
+  var phoneno = /^\d{10}$/;
+  var checkPasswd = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if ((email == "" && passwd == "") || (email == "" && user == "") || (email == "" && mobile == "") || (user == "" && mobile == "") || (user == "" && passwd == "") || (mobile == "" && passwd == "")){
+    alert("All boxes must be filled out !!");
+    return false;
+  }
+  else if (email == " ") {
+    alert("Email must be filled out !!");
+    return false;
+  }
+  else if(passwd == ""){
+    alert("Password must be filled out !!");
+    return false;
+  }
+  else if(user == ""){
+    alert("Username must be filled out !!");
+    return false;
+  }
+  else if(mobile == ""){
+    alert("Mobile number must be filled out !!");
+    return false;
+  }
+  else if(!mobile.match(phoneno)){
+      alert("Wrong Mobile number." + "\n\n" + "Mobile Number must be of 10 digit" );
+          return false;
+    }
+  else if(!passwd.match(checkPasswd)){
+    alert("Password must be more than 6 characters." + "\n\n" + "And must be AlphaNumeric(combination of Alphabets and Numbers).");
+    return false;
+    }
+ 
+  else if(email.match(mailformat)){
+    alert("You have entered an invalid email address!");
+    return false;
+  }
+
+  }
+</script>
+</body>
+</html>

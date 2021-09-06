@@ -4,4 +4,3 @@ validate_email
 bcrypt
 pymongo[srv]
 pytz
-   

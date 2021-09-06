@@ -36,8 +36,8 @@ def register():
         if isValid == True:
             hashpass = bcrypt.hashpw(passwd.encode('utf-8') , bcrypt.gensalt())
             db.users.insert_one({"name" : name , "mobile" : mobile , "email" : email , "password": hashpass,"SignUptime" : SignUptime})
-            email_sender.email_sender(email , name, mobile)
-            print("email send")
+            #email_sender.email_sender(email , name, mobile)
+            #print("email send")
             return render_template("login.html")
         else:
             return "Wrong email or email does not exist"
@@ -49,7 +49,7 @@ def login():
         global email
         email = request.form.get("email") 
         global login_email 
-        login_email = client[db][collection].find_one({"email":email})
+        login_email = db.users.find_one({"email":email})
         if login_email:
             if bcrypt.hashpw(request.form['password'].encode('utf-8') , login_email['password']) == login_email['password']:
                 global name
@@ -82,12 +82,12 @@ def OTP():
     if request.method == "POST" or request.method == "GET":
         global email
         email = request.form.get("email")
-        passwd_email = client[db][collection].find_one({"email":email})
+        passwd_email = db.users.find_one({"email":email})
         if passwd_email: 
             name = passwd_email['name']
             global otp
-            otp = OTP_Sender.otp_sender(email, name)
-            print(otp)
+            #otp = OTP_Sender.otp_sender(email, name)
+            #print(otp)
             return render_template("otp.html")
         else:
             return "Email doesn't exist!!"

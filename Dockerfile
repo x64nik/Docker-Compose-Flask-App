@@ -1,5 +1,4 @@
 FROM centos:latest
-RUN yum install net-tools -y
 RUN yum install httpd -y
 RUN yum install python3 -y
 COPY requirements.txt /home

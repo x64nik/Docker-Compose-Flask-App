@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: /opt/kompose convert
+    kompose.version: 1.28.0 (c4137012e)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: web
+  name: web
+spec:
+  ports:
+    - name: "1234"
+      port: 1234
+      targetPort: 5050
+  selector:
+    io.kompose.service: web
+status:
+  loadBalancer: {}

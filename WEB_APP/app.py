@@ -9,7 +9,7 @@ from Forgot_Password import OTP_Sender
 import os
 
 IST = pytz.timezone('Asia/Kolkata')
-client = MongoClient(os.environ['DB_PORT_27017_TCP_ADDR'],27017)
+client = MongoClient('mongodb://mongodb:27017/')
 app = Flask("Mail App")
 
 db = client.users

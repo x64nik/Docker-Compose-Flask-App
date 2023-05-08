@@ -5,6 +5,8 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum install net-tools -y
 RUN yum install httpd -y
 RUN yum install python3 -y
+RUN pip3 install setuptools-rust
+RUN pip3 install --upgrade pip
 COPY requirements.txt /home
 RUN pip3 install -r /home/requirements.txt
 COPY WEB_APP Mail_App
